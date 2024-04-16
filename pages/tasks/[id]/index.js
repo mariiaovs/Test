@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import TaskDetails from "@/components/TaskDetails";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -24,7 +23,6 @@ export default function DetailsPage({ tasks }) {
 
   return (
     <>
-      <Header />
       <StyledLink href="/">
         <BackArrow />
       </StyledLink>
