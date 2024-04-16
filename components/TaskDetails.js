@@ -8,6 +8,7 @@ const StyledSection = styled.section`
   border-radius: 2rem;
   padding: 2rem;
   gap: 1rem;
+  margin-bottom: 5rem;
 `;
 
 export default function TaskDetails({ task }) {
