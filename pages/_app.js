@@ -2,6 +2,7 @@ import { useState } from "react";
 import GlobalStyle from "../styles";
 import initialTasks from "@/db/lib/tasks";
 import { uid } from "uid";
+import Layout from "@/components/Layout";
 
 export default function App({ Component, pageProps }) {
   const [tasks, setTasks] = useState(initialTasks);
@@ -26,13 +27,13 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <>
+    <Layout>
       <GlobalStyle />
       <Component
         {...pageProps}
         tasks={tasksAfterSorting}
         handleAddData={handleAddData}
       />
-    </>
+    </Layout>
   );
 }
