@@ -24,19 +24,22 @@ export default function App({ Component, pageProps }) {
   const [showModal, setShowModal] = useState(false);
   const router = useRouter();
 
-  function handleAddData(formData) {
+  function handleAddTask(formData) {
     setTasks([
       ...tasks,
       {
         id: uid(),
-        title: formData.title,
-        category: formData.category,
-        priority: formData.priority,
-        dueDate: formData.dueDate,
-        assignedTo: formData.assignedTo,
+        ...formData,
         isDone: false,
       },
     ]);
+    router.push("/");
+  }
+
+  function handleEditTask(updatedData) {
+    const id = updatedData.id;
+    setTasks(tasks.map((task) => (task.id === id ? updatedData : task)));
+    router.push(`/tasks/${id}`);
   }
 
   function handleAddMember(memberFormData) {
@@ -72,8 +75,9 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         tasks={tasksAfterSorting}
+        onAddTask={handleAddTask}
+        onEditData={handleEditTask}
         familyMembers={familyMembers}
-        handleAddData={handleAddData}
         onAddMember={handleAddMember}
         setShowModal={setShowModal}
         showModal={showModal}
