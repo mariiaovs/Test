@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Link from "next/link";
 import StyledButton from "./StyledButton";
 import Trash from "@/public/assets/images/trash-icon.svg";
 import Modal from "./Modal";
