@@ -1,6 +1,4 @@
 import FamilyMembersList from "@/components/FamilyMembersList";
-import BackArrow from "@/public/assets/images/back-arrow.svg";
-import StyledBackLink from "@/components/StyledBackLink";
 import styled from "styled-components";
 import { StyledMessage } from "..";
 import MemberForm from "@/components/MemberForm";
@@ -28,9 +26,6 @@ export default function FamilyPage({
   return (
     <>
       <StyledHeading>My Family</StyledHeading>
-      <StyledBackLink href="/">
-        <BackArrow />
-      </StyledBackLink>
       {!familyMembers.length && (
         <StyledMessage>The list is empty. Add members to begin!</StyledMessage>
       )}
