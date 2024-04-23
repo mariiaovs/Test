@@ -31,7 +31,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   border-radius: 2rem;
   padding: 2rem;
-  gap: 1rem;
+  gap: 0.5rem;
   transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
   box-shadow: 5px 5px 15px 5px rgba(112, 107, 91, 0.83);
   ${({ $isDone }) =>
@@ -80,8 +80,9 @@ export default function TaskDetails({
   onDelete,
   onCancel,
   onCheckboxChange,
+  familyMembers,
 }) {
-  const { title, category, priority, dueDate, id, isDone } = task;
+  const { title, category, priority, dueDate, id, isDone, assignedTo } = task;
 
   return (
     <>
@@ -121,6 +122,10 @@ export default function TaskDetails({
             onChange={() => onCheckboxChange(id)}
           />
         </label>
+        <p>Member:</p>
+        <h2>
+          {familyMembers.find((member) => member.id === assignedTo)?.name}
+        </h2>
       </StyledSection>
     </>
   );

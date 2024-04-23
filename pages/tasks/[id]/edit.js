@@ -1,16 +1,9 @@
 import Form from "@/components/Form";
-import Link from "next/link";
 import BackArrow from "@/public/assets/images/back-arrow.svg";
-import styled from "styled-components";
 import { useRouter } from "next/router";
+import StyledBackLink from "@/components/StyledBackLink";
 
-const StyledLink = styled(Link)`
-  position: fixed;
-  top: 0.7rem;
-  left: calc(50% - 170px);
-`;
-
-export default function EditPage({ onEditData, tasks }) {
+export default function EditPage({ onEditData, tasks, familyMembers }) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -19,14 +12,15 @@ export default function EditPage({ onEditData, tasks }) {
   return (
     <>
       <div>
-        <StyledLink href={`/tasks/${id}`}>
+        <StyledBackLink href={`/tasks/${id}`}>
           <BackArrow />
-        </StyledLink>
+        </StyledBackLink>
         <Form
           onTaskSubmit={onEditData}
           title="Edit a task"
           isEdit
           value={task}
+          familyMembers={familyMembers}
         />
       </div>
     </>

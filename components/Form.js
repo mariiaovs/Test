@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
 import StyledButton from "./StyledButton";
@@ -38,7 +37,13 @@ const StyledDiv = styled.div`
   justify-content: space-between;
 `;
 
-export default function Form({ onTaskSubmit, title, value, isEdit }) {
+export default function Form({
+  onTaskSubmit,
+  title,
+  value,
+  isEdit,
+  familyMembers,
+}) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [isValid, setIsValid] = useState(false);
 
@@ -120,6 +125,19 @@ export default function Form({ onTaskSubmit, title, value, isEdit }) {
         min={formattedTodayDate}
         defaultValue={value?.dueDate}
       ></input>
+      <StyledLabel htmlFor="assignedTo">Member:</StyledLabel>
+      <StyledSelect
+        id="assignedTo"
+        name="assignedTo"
+        defaultValue={value?.assignedTo}
+      >
+        <option value="">Select Family Member</option>
+        {familyMembers.map((member) => (
+          <option key={member.id} value={member.id}>
+            {member.name}
+          </option>
+        ))}
+      </StyledSelect>
       <StyledButton>{isEdit ? "Update" : "Create"}</StyledButton>
     </StyledForm>
   );

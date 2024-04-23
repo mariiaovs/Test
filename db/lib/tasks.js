@@ -4,8 +4,8 @@ const initialTasks = [
     title: "Grocery Shopping",
     category: "Errands",
     priority: 3,
-    dueDate: "2024-04-19",
-    assignedTo: ["1"],
+    dueDate: "2024-05-12",
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -13,8 +13,9 @@ const initialTasks = [
     title: "Pay Electricity Bill",
     category: "Bills",
     priority: 2,
-    dueDate: "2024-04-19",
-    assignedTo: ["1", "2"],
+
+    dueDate: "2024-05-15",
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -22,8 +23,8 @@ const initialTasks = [
     title: "Car Maintenance",
     category: "Maintenance",
     priority: 1,
-    dueDate: "2024-04-23",
-    assignedTo: ["2"],
+    dueDate: "2024-05-14",
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -31,8 +32,8 @@ const initialTasks = [
     title: "Parent-Teacher Meeting",
     category: "School",
     priority: 3,
-    dueDate: "2024-05-15",
-    assignedTo: ["1"],
+    dueDate: "2024-04-29",
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -41,7 +42,7 @@ const initialTasks = [
     category: "Social",
     priority: 1,
     dueDate: "2024-05-20",
-    assignedTo: ["1", "2"],
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -50,7 +51,7 @@ const initialTasks = [
     category: "Maintenance",
     priority: 2,
     dueDate: "2024-06-18",
-    assignedTo: ["2"],
+    assignedTo: "2",
     isDone: false,
   },
   {
@@ -58,8 +59,8 @@ const initialTasks = [
     title: "Vet Appointment for Max",
     category: "Pets",
     priority: 3,
-    dueDate: "2024-04-22",
-    assignedTo: ["1", "2"],
+    dueDate: "2024-05-22",
+    assignedTo: "2",
     isDone: false,
   },
   {
@@ -68,7 +69,7 @@ const initialTasks = [
     category: "Health",
     priority: 2,
     dueDate: "2024-04-25",
-    assignedTo: ["1"],
+    assignedTo: "1",
     isDone: false,
   },
   {
@@ -77,7 +78,7 @@ const initialTasks = [
     category: "Maintenance",
     priority: 1,
     dueDate: "2024-05-05",
-    assignedTo: ["2"],
+    assignedTo: "2",
     isDone: false,
   },
   {
@@ -85,8 +86,8 @@ const initialTasks = [
     title: "Prepare Guest Room for Visitors",
     category: "Social",
     priority: 2,
-    dueDate: "2024-04-30",
-    assignedTo: ["1", "2"],
+    dueDate: "2024-05-30",
+    assignedTo: "2",
     isDone: false,
   },
 ];
