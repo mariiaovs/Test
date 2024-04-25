@@ -21,6 +21,7 @@ export default function DetailsPage({
 }) {
   const router = useRouter();
   const { id } = router.query;
+  if (!id) return;
 
   const task = tasks.find((task) => task.id === id);
 
