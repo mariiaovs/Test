@@ -17,15 +17,17 @@ export default function DetailsPage({
   onCancel,
   onCheckboxChange,
   familyMembers,
+  detailsBackLinkRef,
 }) {
   const router = useRouter();
   const { id } = router.query;
+  if (!id) return;
 
   const task = tasks.find((task) => task.id === id);
 
   return (
     <>
-      <StyledBackLink href="/">
+      <StyledBackLink href={detailsBackLinkRef}>
         <BackArrow />
       </StyledBackLink>
 
