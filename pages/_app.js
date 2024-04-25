@@ -7,7 +7,6 @@ import Layout from "@/components/Layout";
 
 const initialFamilyMembers = [
   {
-
     id: "1",
     name: "Swetha",
     role: "Parent",
@@ -54,6 +53,8 @@ export default function App({ Component, pageProps }) {
   const [familyMembers, setFamilyMembers] = useState(initialFamilyMembers);
   const [categories, setCategories] = useState(initialCategories);
   const [showModal, setShowModal] = useState(false);
+  const [detailsBackLinkRef, setDetailsBackLinkRef] = useState("/");
+
   const router = useRouter();
 
   function handleAddTask(formData) {
@@ -65,13 +66,11 @@ export default function App({ Component, pageProps }) {
         isDone: false,
       },
     ]);
-    router.push("/");
   }
 
   function handleEditTask(updatedData) {
     const id = updatedData.id;
     setTasks(tasks.map((task) => (task.id === id ? updatedData : task)));
-    router.push(`/tasks/${id}`);
   }
 
   function handleAddMember(memberFormData) {
@@ -123,6 +122,8 @@ export default function App({ Component, pageProps }) {
         onCheckboxChange={handleCheckboxChange}
         categories={categories}
         onAddCategory={handleAddCategory}
+        detailsBackLinkRef={detailsBackLinkRef}
+        setDetailsBackLinkRef={setDetailsBackLinkRef}
       />
     </Layout>
   );

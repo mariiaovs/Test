@@ -24,7 +24,11 @@ const StyledParagraph = styled.p`
   text-align: center;
 `;
 
-export default function TaskPreview({ task, onCheckboxChange }) {
+export default function TaskPreview({
+  task,
+  onCheckboxChange,
+  setDetailsBackLinkRef,
+}) {
   const { title, category, priority, dueDate, id, isDone } = task;
 
   return (
@@ -34,7 +38,10 @@ export default function TaskPreview({ task, onCheckboxChange }) {
         checked={isDone}
         onChange={() => onCheckboxChange(id)}
       />
-      <StyledLink href={`tasks/${id}`}>
+      <StyledLink
+        href={`tasks/${id}`}
+        onClick={() => setDetailsBackLinkRef("/")}
+      >
         <h3>{title}</h3>
         <StyledParagraph>{"🔥".repeat(priority)}</StyledParagraph>
         <p>{category}</p>

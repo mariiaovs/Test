@@ -17,6 +17,7 @@ export default function DetailsPage({
   onCancel,
   onCheckboxChange,
   familyMembers,
+  detailsBackLinkRef,
 }) {
   const router = useRouter();
   const { id } = router.query;
@@ -25,7 +26,7 @@ export default function DetailsPage({
 
   return (
     <>
-      <StyledBackLink href="/">
+      <StyledBackLink href={detailsBackLinkRef}>
         <BackArrow />
       </StyledBackLink>
 
